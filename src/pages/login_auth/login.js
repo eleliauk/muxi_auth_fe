@@ -83,6 +83,9 @@ class Login_auth extends Component {
         }
         //跳转到工作台
         let landing = getCookie('landing');
+        if (landing === '') {
+          landing = getQueryVariable('landing');
+        }
         window.location.href =
           'http://' +
           landing +
