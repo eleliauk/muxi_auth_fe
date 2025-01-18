@@ -7,9 +7,10 @@ COPY . /usr/src/app
 
 WORKDIR /usr/src/app/server
 
-# Build server file
-RUN npm install --registry=https://registry.npm.taobao.org
+# Build server file 先换源
+RUN yarn config set registry https://registry.npm.taobao.org/ 
+RUN yarn install 
 
 # Bundle app source
 EXPOSE 3000
-CMD [ "yarn", "start" ]
+CMD [ "npm", "start" ]
