@@ -87,8 +87,11 @@ class Login_auth extends Component {
           landing = getQueryVariable('landing');
         }
         window.location.href =
-          // eslint-disable-next-line no-useless-concat
-          'http://' + landing + '/?accessCode=' + accessCode;
+          'http://' +
+          landing +
+          'landing/?work.muxi-tech.xyz' +
+          'accessCode=' +
+          accessCode;
       }
     } else {
       this.alert('请输入用户名和密码');
